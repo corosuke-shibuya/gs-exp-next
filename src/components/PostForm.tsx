@@ -1,16 +1,21 @@
 // src/components/PostForm.tsx
+
 "use client";
+
 // ========================================
-// 投稿フォームコンポーネント（UIのみ）
+// 投稿フォームコンポーネント
 // ========================================
-// 投稿機能は Day2 で実装します
 
 type PostFormProps = {
   userInitial?: string;
   value: string;
-  onChange: (value: string) => void; //入力したものが変化したときの処理
-  onSubmit: () => void; //フォームのボタンが押されたかどうかの処理
-  disabled?: boolean; //送信ボタンの状態
+  // → 入力値（親で管理）
+  onChange: (value: string) => void;
+  // → 入力値が変わったときに呼ばれる
+  onSubmit: (e: React.FormEvent) => void;
+  // → フォーム送信時に呼ばれる
+  disabled?: boolean;
+  // → 送信ボタンを無効にするか
 };
 
 export default function PostForm({
