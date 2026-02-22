@@ -12,8 +12,8 @@ export type Post = {
   userId: string | null;
   createdAt: string;
   updatedAt: string;
-  likeCount: number;
-  isLiked: boolean;
+  likeCount: number;  // いいね数
+  isLiked: boolean;  // ログインユーザーがいいねしているか
 };
 
 // ========================================
